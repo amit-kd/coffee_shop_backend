@@ -1,0 +1,12 @@
+spring:
+    profiles:
+      active: dev
+    datasource:
+      url: jdbc:postgresql://baasu.db.elephantsql.com:5432/iezuuzew
+      username: iezuuzew
+      password: oeORhCdWd9xHdgL6xLYbK8n-48N7TP8G
+    jpa:
+      generate-ddl: true
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
