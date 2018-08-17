@@ -30,7 +30,7 @@ public class OrderController {
 	@Autowired
 	private ResponseBuilder<OrderResponse> responseBuilder;
 
-	@RequestMapping(value = "/orders/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/orders/{userId}", method = RequestMethod.GET)
 	public ResponseEntity<CustomResponse<OrderResponse>> retriveProducts(@PathVariable String userId)
 			throws CoffeeShopBaseException {
 		logger.info("Entered in method-retriveProducts of class-ProductController at {}", System.currentTimeMillis());
@@ -38,7 +38,7 @@ public class OrderController {
 				.body(responseBuilder.buildResponse(this.orderService.retriveOrders(userId), Collections.emptyList()));
 	}
 
-	@RequestMapping(value = "/orders/{userId}/{orderId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/orders/{userId}/{orderId}", method = RequestMethod.GET)
 	public ResponseEntity<CustomResponse<OrderResponse>> retriveProductDetails(@PathVariable String userId,
 			@PathVariable String orderId) throws CoffeeShopBaseException {
 		logger.info("Entered in method-retriveProductDetails of class-ProductController at {}",

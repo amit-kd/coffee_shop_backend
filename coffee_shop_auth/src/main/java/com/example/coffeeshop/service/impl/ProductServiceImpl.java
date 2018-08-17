@@ -58,7 +58,7 @@ public class ProductServiceImpl implements ProductService {
 		productResponse.setNoOfReviews(product.getNoOfReviews().toString());
 		productResponse.setNoOfVotes(product.getNoOfVotes().toString());
 		productResponse.setRating(product.getRating().toString());
-		productResponse.setStockCount(product.getThresholdStockCount());
+		productResponse.setStockCount(product.getStockCount());
 		productResponse.setThresholdStockCount(product.getThresholdStockCount());
 		productResponse.setTitle(product.getTitle());
 		productResponse.setPrivewImages(Arrays.asList(product.getPrivewImages().split(",")));

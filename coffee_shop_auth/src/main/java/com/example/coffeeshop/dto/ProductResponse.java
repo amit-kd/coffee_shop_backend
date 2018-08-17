@@ -22,7 +22,7 @@ public class ProductResponse implements Serializable {
 	private String enjoyedPercentage;
 	private String noOfVotes;
 	private Boolean isLiked = false;
-	private Integer quantity = 0;
+	private Integer quantity = 1;
 	private Integer stockCount;
 	private Integer thresholdStockCount;
 

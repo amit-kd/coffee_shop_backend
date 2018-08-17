@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,8 @@ import com.example.coffeeshop.service.UserService;
 import com.example.coffeeshop.utils.ResponseBuilder;
 
 @RestController
-@RequestMapping(path = "/coffeeshop/v1", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@CrossOrigin
+@RequestMapping(path = "/coffeeshop/v1", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -32,7 +34,7 @@ public class HomeController {
 	@Autowired
 	private ResponseBuilder<UserRegisterResponse> responseBuilder;
 
-	@RequestMapping(value = "/user/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<CustomResponse<UserRegisterResponse>> registerUser(
 			@RequestBody UserRegisterRequest userRegisterRequest) throws CoffeeShopBaseException {
 		logger.info("Entered in method-sendEmail of class-EmailController at {}", System.currentTimeMillis());

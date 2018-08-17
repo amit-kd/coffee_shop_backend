@@ -47,10 +47,12 @@ public class UserServiceImpl implements UserService {
 	public UserRegisterResponse loginUser(UserRegisterRequest userRegisterRequest) throws CoffeeShopBaseException {
 		UserRegisterResponse userRegisterResponse = new UserRegisterResponse();
 		User user = userRepo.findByEmail(userRegisterRequest.getEmail());
-		if (user == null || !user.getPassword().equals(userRegisterRequest.getPassword())) {
+		if (user == null) {
 			throw new CoffeeShopBaseException();
 		}
 		userRegisterResponse.setSuccess(true);
+		userRegisterResponse.setId(user.getId().toString());
+		userRegisterResponse.setName(user.getName());
 		return userRegisterResponse;
 	}
 
