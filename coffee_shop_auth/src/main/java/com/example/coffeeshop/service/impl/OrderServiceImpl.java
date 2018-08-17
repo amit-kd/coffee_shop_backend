@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public OrderResponse retriveOrderDetails(String userId, String orderId) throws CoffeeShopBaseException {
-		UserOrder userOrder = userOrderRepo.findByIdAndOrderId(Long.valueOf(userId), Long.valueOf(orderId));
+		UserOrder userOrder = userOrderRepo.findByUserIdAndOrderId(Long.valueOf(userId), Long.valueOf(orderId));
 		if (userOrder == null) {
 			throw new CoffeeShopBaseException();
 		}

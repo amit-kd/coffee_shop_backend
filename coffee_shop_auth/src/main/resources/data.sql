@@ -11,7 +11,7 @@ INSERT INTO public.tbl_product
 VALUES(200, 'Cappuccino of the Day', 30, 45, 11, 220, '../../../assets/img/coffee-2.jpg,../../../assets/img/coffee-1.jpg,../../../assets/img/coffee-3.jpg', '4', 2, 4, 'Cappuccino');
 INSERT INTO public.tbl_product
 (current_price, description, enjoyed, reviews_count, votes_count, original_price, privew_images, rating, stock_count, threshold_stock_count, title)
-VALUES(210, 'Hot Chocolate', 98, 10, 30, 230, '../../../assets/img/coffee-3.jpg,../../../assets/img/coffee-2.jpg,../../../assets/img/coffee-1.jpg', '5', 4, 4, 'Filter Coffee');
+VALUES(210, 'Hot Chocolate of the Day', 98, 10, 30, 230, '../../../assets/img/coffee-3.jpg,../../../assets/img/coffee-2.jpg,../../../assets/img/coffee-1.jpg', '5', 4, 4, 'Hot Chocolate');
 
 
 INSERT INTO public.tbl_user

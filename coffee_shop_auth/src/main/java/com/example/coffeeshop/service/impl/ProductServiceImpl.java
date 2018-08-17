@@ -40,11 +40,13 @@ public class ProductServiceImpl implements ProductService {
 		Product product = productRepo.findById(Long.valueOf(productId));
 		if (product == null) {
 			throw new CoffeeShopBaseException();
-		}
-		UserProduct userProduct = userProductRepo.findByIdAndProductId(Long.valueOf(userId), Long.valueOf(productId));
+		}	
 		ProductResponse productResponse = this.mapProductToDTO(product);
-		if (userProduct != null) {
-			productResponse.setIsLiked(true);
+		if(userId.matches("-?\\d+")){
+			UserProduct userProduct = userProductRepo.findByUserIdAndProductId(Long.valueOf(userId), Long.valueOf(productId));
+			if (userProduct != null) {
+				productResponse.setIsLiked(true);
+			}
 		}
 		return productResponse;
 	}

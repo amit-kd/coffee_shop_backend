@@ -16,5 +16,5 @@ public interface UserProductRepo extends JpaRepository<UserProduct, Long> {
 	 * @return User entity with user's details if email id is valid
 	 */
 	@Transactional
-	UserProduct findByIdAndProductId(Long userId, Long productId);
+	UserProduct findByUserIdAndProductId(Long userId, Long productId);
 }

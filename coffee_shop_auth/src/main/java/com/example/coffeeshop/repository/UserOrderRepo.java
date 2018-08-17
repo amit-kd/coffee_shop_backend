@@ -16,5 +16,5 @@ public interface UserOrderRepo extends JpaRepository<UserOrder, Long> {
 	 * @return User entity with user's details if email id is valid
 	 */
 	@Transactional
-	UserOrder findByIdAndOrderId(Long userId, Long orderId);
+	UserOrder findByUserIdAndOrderId(Long userId, Long orderId);
 }
