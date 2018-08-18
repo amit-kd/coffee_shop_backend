@@ -155,9 +155,6 @@ workflows:
           filters:
             branches:
               only: master      
-      - prod_deploy:
-          requires:
-            - test
           filters:
             branches:
               only: master
