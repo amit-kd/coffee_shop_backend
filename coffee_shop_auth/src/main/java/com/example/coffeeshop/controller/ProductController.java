@@ -48,4 +48,16 @@ public class ProductController {
 						Collections.singletonList(this.productService.retriveProductDetails(userId, productId)),
 						Collections.emptyList()));
 	}
+	
+	@RequestMapping(value = "/products/{userId}/{productId}", method = RequestMethod.POST)
+	public ResponseEntity<CustomResponse<ProductResponse>> likeProduct(@PathVariable String userId,
+			@PathVariable String productId) throws CoffeeShopBaseException {
+		logger.info("Entered in method-likeProduct of class-ProductController at {}",
+				System.currentTimeMillis());
+		logger.debug("input payload: {}, {}", userId, productId);
+		return ResponseEntity.ok()
+				.body(responseBuilder.buildResponse(
+						Collections.singletonList(this.productService.likeProduct(userId, productId)),
+						Collections.emptyList()));
+	}
 }

@@ -41,7 +41,7 @@ public class User implements Serializable {
 	private List<Role> roles;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "tbl_user_product", joinColumns = @JoinColumn(name = "id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
+	@JoinTable(name = "tbl_user_product", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
 	private List<Product> products;
 
 	@ManyToMany(fetch = FetchType.LAZY)

@@ -51,6 +51,30 @@ public class ProductServiceImpl implements ProductService {
 		return productResponse;
 	}
 
+	@Override
+	public ProductResponse likeProduct(String userId, String productId) throws CoffeeShopBaseException {
+		Product product = productRepo.findById(Long.valueOf(productId));
+		if (product == null) {
+			throw new CoffeeShopBaseException();
+		}	
+		ProductResponse productResponse = this.mapProductToDTO(product);
+		if(userId.matches("-?\\d+")){
+			UserProduct userProduct = userProductRepo.findByUserIdAndProductId(Long.valueOf(userId), Long.valueOf(productId));
+			if (userProduct != null) {
+				userProductRepo.delete(userProduct);
+				productResponse.setIsLiked(false);
+			}else{
+				userProduct = new UserProduct();
+				userProduct.setUserId(Long.valueOf(userId));
+				userProduct.setProductId(Long.valueOf(productId));
+				userProductRepo.save(userProduct);
+				productResponse.setIsLiked(true);
+			}
+		}
+		return productResponse;
+	}
+
+	
 	private ProductResponse mapProductToDTO(Product product) {
 		ProductResponse productResponse = new ProductResponse();
 		productResponse.setCurrentPrice(product.getCurrentPrice().toString());

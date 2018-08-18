@@ -18,6 +18,7 @@ public class OrderResponse implements Serializable {
 	private String time;
 	private String total;
 	private String status;
+	private Boolean isSubmit;
 
 	public String getId() {
 		return id;
@@ -65,6 +66,14 @@ public class OrderResponse implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getIsSubmit() {
+		return isSubmit;
+	}
+
+	public void setIsSubmit(Boolean isSubmit) {
+		this.isSubmit = isSubmit;
 	}
 
 }

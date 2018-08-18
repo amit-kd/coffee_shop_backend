@@ -26,19 +26,19 @@ VALUES(1, 1);
 
 INSERT INTO public.tbl_order
 (date_time, status, total)
-VALUES((TIMESTAMP '2011-05-16 15:36:38'), 'SAVED', '450');
+VALUES((TIMESTAMP '2011-05-16 15:36:38'), 'SAVED', '580');
 INSERT INTO public.tbl_order
 (date_time, status, total)
-VALUES((TIMESTAMP '2012-05-16 15:36:38'), 'CONFIRMING', '350');
+VALUES((TIMESTAMP '2012-05-16 15:36:38'), 'CONFIRMING', '810');
 INSERT INTO public.tbl_order
 (date_time, status, total)
-VALUES((TIMESTAMP '2013-05-16 15:36:38'), 'PREPARING', '250');
+VALUES((TIMESTAMP '2013-05-16 15:36:38'), 'PREPARING', '1740');
 INSERT INTO public.tbl_order
 (date_time, status, total)
-VALUES((TIMESTAMP '2014-05-16 15:36:38'), 'OUT_FOR_DELIVERY', '650');
+VALUES((TIMESTAMP '2014-05-16 15:36:38'), 'OUT_FOR_DELIVERY', '630');
 INSERT INTO public.tbl_order
 (date_time, status, total)
-VALUES((TIMESTAMP '2015-05-16 15:36:38'), 'DELIVERED', '550');
+VALUES((TIMESTAMP '2015-05-16 15:36:38'), 'DELIVERED', '400');
 
 
 INSERT INTO public.tbl_user_order
@@ -58,29 +58,29 @@ INSERT INTO public.tbl_user_order
 VALUES(1, 5);
 
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(1, 1);
+(order_id, product_id, quantity)
+VALUES(1, 1,1);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(1, 2);
+(order_id, product_id, quantity)
+VALUES(1, 2,2);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(2, 3);
+(order_id, product_id, quantity)
+VALUES(2, 3,3);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(2, 1);
+(order_id, product_id, quantity)
+VALUES(2, 1,1);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(3, 1);
+(order_id, product_id, quantity)
+VALUES(3, 1,4);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(3, 2);
+(order_id, product_id, quantity)
+VALUES(3, 2,3);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(3, 3);
+(order_id, product_id, quantity)
+VALUES(3, 3,2);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(4, 3);
+(order_id, product_id, quantity)
+VALUES(4, 3, 3);
 INSERT INTO public.tbl_order_product
-(order_id, product_id)
-VALUES(5, 2);
+(order_id, product_id, quantity)
+VALUES(5, 2 ,2);
