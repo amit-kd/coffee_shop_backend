@@ -21,13 +21,13 @@ jobs:
             - ~/repo
       - run:
           name: Build Parent
-          command: mvn  package -f ./coffee_shop_auth/pom.xml -Dmaven.test.skip=true # run the actual tests
+          command: cd ./coffee_shop_parent && mvn package -Dmaven.test.skip=true # run the actual tests
       - run:
           name: Build Common
-          command: mvn  package -f ./coffee_shop_common/pom.xml -Dmaven.test.skip=true # run the actual tests
+          command: cd ../coffee_shop_common && mvn package -Dmaven.test.skip=true # run the actual tests
       - run:
           name: Build auth
-          command: mvn  package -f ./coffee_shop_auth/pom.xml -Dmaven.test.skip=true # run the actual tests
+          command: cd ../coffee_shop_auth && mvn package -Dmaven.test.skip=true # run the actual tests
   test:
     working_directory: ~/repo
     docker:
