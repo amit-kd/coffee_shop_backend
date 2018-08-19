@@ -15,12 +15,21 @@ Push any changes to master branch. Heoku will auto start deployment to https://i
 
 # URLs:
 token url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/oauth/token - POST - Secured (Needs basic auth with client secret)
+
 login url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/user/login - POST - Secured (Needs Bearer token)
+
 signup url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/register - POST
+
 product listing url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/products - GET
+
 product details url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/products/{userid}/{productid} - GET
+
 product like url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/products/{productid} - POST - Secured (Needs Bearer token)
+
 order listing url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/user/orders/{userid} - GET - Secured (Needs Bearer token)
+
 order details url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/user/orders/{userid}/{orderid} - GET - Secured (Needs Bearer token)
+
 update order url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/user/order/{userid} - POST - Secured (Needs Bearer token)
+
 create order url : https://i-coffee-shop.herokuapp.com/coffeeshop/v1/user/orders/{userid} - POST - Secured (Needs Bearer token)
